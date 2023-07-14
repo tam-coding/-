@@ -4,9 +4,27 @@ import Register from '@/pages/Register'
 import Search from '@/pages/Search'
 import Detail from '@/pages/Detail'
 import AddCarSuccess from '@/pages/AddCartSuccess'
+import Trade from '@/pages/Trade'
 import ShopCart from '@/pages/ShopCart'
+import Pay from '@/pages/Pay'
+import PaySuccess from '@/pages/PaySuccess'
 
 export default [
+    {
+        path:'/paySuccess',
+        component:PaySuccess,
+        meta:{show:true}
+    },
+    {
+        path:'/pay',
+        component:Pay,
+        meta:{show:true}
+    },
+    {
+        path:'/trade',
+        component:Trade,
+        meta:{show:true}
+    },
     {
         path:'/shopCart',
         component:ShopCart,

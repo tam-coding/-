@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "userAddress": "广东省湛江市吴川市",
+        "userId": "2",
+        "provinceId": "1",
+        "consignee": "小谭",
+        "phoneNum": "18898525049",
+        "fullAddress": "广东省湛江市吴川市",
+        "isDefault": "1"
+
+    },
+    {
+        "id": "2",
+        "userAddress": "湖北省武汉市",
+        "userId": "2",
+        "provinceId": "2",
+        "consignee": "小文",
+        "phoneNum": "18898525000",
+        "fullAddress": "湖北省武汉市",
+        "isDefault": "0"
+    },
+    {
+        "id": "2",
+        "userAddress": "湖北省武汉市嘉鱼",
+        "userId": "2",
+        "provinceId": "2",
+        "consignee": "小钊",
+        "phoneNum": "18898525111",
+        "fullAddress": "湖北省武汉市嘉鱼",
+        "isDefault": "0"
+    }
+    
+]
