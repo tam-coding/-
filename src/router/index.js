@@ -38,9 +38,11 @@ router.beforeEach((to,from,next)=>{
     let name=store.state.user.userInfo.name
     //用户是否登陆了
     if(token){
-        //登录了不能再跳转登录
+        //登录了不能再跳转登录   bug localstorage有token 但是显示未登录状态 所有需要清除掉token 再跳转登录
         if(to.path=='/login'){
-            next('/home')
+        store.commit("user/CLEAR")
+            
+            next('/login')
         }else{
             //登录了，且不是跳转到注册页面
             //如果用户信息存在
@@ -70,7 +72,7 @@ router.beforeEach((to,from,next)=>{
             next()
         else{
             alert('请先登录')
-            next('/login')
+            next(`/login?toPath=${to.path}`)
         }
 
     }

@@ -29,11 +29,16 @@ import "swiper/css/swiper.css"
 import * as API from '@/api'
 
 //elemet-ui
-import { MessageBox} from 'element-ui';
+import { MessageBox,Form} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
-
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
+Vue.use(Form);
+//懒加载
+// import VueLazyload from 'vue-lazyload'
+// Vue.use(VueLazyload,{
+
+// })
 
 new Vue({
   render: h => h(App),

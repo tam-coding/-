@@ -79,7 +79,7 @@
        
         try {
         (this.phone&&this.password)&&await this.$store.dispatch("user/userLogin",{phone:this.phone,password:this.password})
-          this.$router.push("/home")
+          this.$router.push(this.$route.query.toPath||'/home')
         } catch (error) {
          alert("账号密码不匹配")
         }

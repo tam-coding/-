@@ -8,8 +8,32 @@ import Trade from '@/pages/Trade'
 import ShopCart from '@/pages/ShopCart'
 import Pay from '@/pages/Pay'
 import PaySuccess from '@/pages/PaySuccess'
+import Center from '@/pages/Center'
+//二级路由组件
+import MyOrder from '@/pages/Center/myOrder/index.vue'
+import GroupOrder from '@/pages/Center/groupOrder/index.vue'
 
 export default [
+    
+    {
+        path:'/center',
+        component:Center,
+        meta:{show:true},
+        children:[
+            {
+                path:'myorder',
+                component:MyOrder,
+            },
+            {
+                path:'grouporder',
+                component:GroupOrder,
+            },
+            {
+                path:'/center',
+                redirect:'/center/myorder'
+            }
+        ]
+    },
     {
         path:'/paySuccess',
         component:PaySuccess,
@@ -18,12 +42,26 @@ export default [
     {
         path:'/pay',
         component:Pay,
-        meta:{show:true}
+        meta:{show:true},
+        beforeEnter: (to, from, next) => {
+            if(from.path=='/trade'){
+                next()
+            }else{
+                next(false)
+            }
+        }
     },
     {
         path:'/trade',
         component:Trade,
-        meta:{show:true}
+        meta:{show:true},
+        beforeEnter: (to, from, next) => {
+            if(from.path=="/shopCart"){
+                next()
+            }else{
+                next(false)
+            }
+        }
     },
     {
         path:'/shopCart',
@@ -49,7 +87,8 @@ export default [
     {
         path:'/login',
         component:Login,
-        meta:{show:false}
+        meta:{show:false},
+       
     },
     {
         path:'/register',

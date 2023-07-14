@@ -7,7 +7,7 @@
           <p>尚品汇欢迎您！</p>
           <p v-if="!userName">
             <span>请</span>
-            <router-link to="/login">登录</router-link>
+            <router-link to="/login" >登录</router-link>
             &nbsp; 
             <router-link to="/register">免费注册</router-link>
           </p>
@@ -17,7 +17,7 @@
           </p>
         </div>
         <div class="typeList">
-          <a href="###">我的订单</a>
+          <router-link to="/center">我的订单</router-link>
           <router-link  to="/shopCart">我的购物车</router-link>
 
           <a href="###">我的尚品汇</a>
@@ -86,7 +86,8 @@ export default {
       } catch (error) {
         console.log(error.message);
       }
-    }
+    },
+  
   },
   mounted() {
     this.$bus.$on("clear",()=>{

@@ -138,10 +138,12 @@ import QRCode from 'qrcode'
         if(this.timer===null){
           this.timer=setInterval(async ()=>{
             let result =await this.$API.reqPayStatus(this.orderId)
-            console.log(result);
+            // console.log(result);
           
            
-            if(result.code==200){
+            // if(result.code==200){
+              //开发需要
+            if(true){
               clearInterval(this.timer)
               this.timer=null
               this.code=result.code
