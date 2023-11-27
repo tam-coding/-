@@ -1,3 +1,4 @@
+学习前端项目流程。。。
 # app
 
 ## Project setup
